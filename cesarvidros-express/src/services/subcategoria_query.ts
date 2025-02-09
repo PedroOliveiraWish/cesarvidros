@@ -11,9 +11,9 @@ select categoria.id_categoria, categoria.nome as categoria_nome, json_agg(json_b
          
         const flattenedSub = sub.flat();
         
-        const objectItem = flattenedSub.map((i) => i);
+        const objectItem = flattenedSub.map((i: Pick<SubCategoria, 'id_sub_categoria' | 'nome'>) => i);
         
-        const filteredNullObjects = objectItem.filter((i: {id_sub: number, nome: string}) => i.id_sub !== null); 
+        const filteredNullObjects = objectItem.filter((i: Pick<SubCategoria, 'id_sub_categoria' | 'nome'>) => i.id_sub_categoria !== null); 
         return filteredNullObjects;
     } catch (error) {
         console.error(error);
