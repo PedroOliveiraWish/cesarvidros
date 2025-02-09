@@ -10,7 +10,7 @@ export const useSubCategoria = () => {
     useEffect(() => {
         const fetchCategorias = async () => {
             try {
-                const response = await fetch('http://localhost:3000/api/sub-categorias/get-all', {
+                const response = await fetch('https://cesarvidros.onrender.com/api/sub-categorias/get-all', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',

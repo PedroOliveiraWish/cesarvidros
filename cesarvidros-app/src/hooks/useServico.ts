@@ -15,7 +15,7 @@ export const useServico = () => {
     useEffect(() => {
         const fetchServicos = async () => {
             try {
-                const response = await fetch('http://localhost:3000/api/servicos/get-all', {
+                const response = await fetch('https://cesarvidros.onrender.com/api/servicos/get-all', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',

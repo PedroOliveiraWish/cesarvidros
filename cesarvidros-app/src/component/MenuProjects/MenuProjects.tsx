@@ -36,8 +36,8 @@ export const MenuCategoria: React.FC = () => {
 
       if (!isNaN(numericId)) {
         const url = key.startsWith("cat_")
-          ? `http://localhost:3000/api/servicos/get-all-by-categoria?id=${numericId}`
-          : `http://localhost:3000/api/servicos/get-all-by-sub-categoria?id=${numericId}`;
+          ? `https://cesarvidros.onrender.com/api/servicos/get-all-by-categoria?id=${numericId}`
+          : `https://cesarvidros.onrender.com/api/servicos/get-all-by-sub-categoria?id=${numericId}`;
 
         // eslint-disable-next-line react-hooks/rules-of-hooks
         await useServicosByProps(url, setServicos);
