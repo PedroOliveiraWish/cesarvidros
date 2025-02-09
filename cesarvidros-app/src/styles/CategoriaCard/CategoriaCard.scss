@@ -1,0 +1,51 @@
+.categoria-card-solo {
+    width: 90%;
+    margin: 10px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    background: #112240 !important;
+    border-radius: 8px !important;
+    color: #ccd6f6 !important;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    .ant-card {
+        border-radius: 8px;
+        background: #fff;
+
+        .ant-card-meta-description {
+            font-size: 14px;
+            color: #555;
+            margin-top: 8px;
+        }
+
+        .ant-card-head {
+            background: #f5f5f5;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+}
+
+img {
+    width: 100% !important;
+    height: 300px !important;
+    object-fit: cover !important;
+    border-top-left-radius: 8px !important;
+    border-top-right-radius: 8px !important;
+    
+}
+
+&::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 139, 0.5) !important; // Semi-transparent dark blue overlay
+}

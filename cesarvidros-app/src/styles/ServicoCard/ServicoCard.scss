@@ -1,0 +1,96 @@
+.servico-card {
+    width: 90% !important;
+    margin: 10px auto !important;
+    height: fit-content !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4) !important;
+    transition: transform 0.3s ease-in-out !important;
+    background: #112240 !important;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.05) !important;
+    }
+
+    .ant-card {
+        border-radius: 8px !important;
+        background: #112240 !important;
+        color: #ffffff !important; // White text for contrast
+
+        .ant-card-meta-description {
+            font-size: 14px !important;
+            color: #d1d1d1 !important; // Light gray text for readability
+            margin-top: 8px !important;
+        }
+
+        .ant-card-head {
+            background: #112240 !important;
+            width: 100% !important;
+            font-weight: bold !important;
+            color: white !important;
+        }
+    }
+}
+
+img {
+    padding: 5px !important;
+    border-radius: 5px;
+}
+
+.ant-card-head-title, .ant-card-extra {
+    color: #ffffff !important;
+    text-align: left;
+}
+
+/* Fullscreen Mode */
+.servico-card.expanded {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 50vw !important;
+    height: fit-content !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 1000 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+    transition: all 0.3s ease-in-out !important;
+}
+
+.servico-card.expanded .card-content {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+.servico-card.expanded img {
+    width: 100% !important;
+    height: 60vh !important;
+    padding: 15px;
+    object-fit: cover !important;
+}
+
+.ant-card-body {
+    padding: 0 20px 20px 20px !important;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    z-index: 999 !important;
+    transition: opacity 0.3s ease-in-out !important;
+}
+
+@media screen and (max-width: 768px) {
+    .servico-card.expanded {
+        width: 90vw !important;
+    }
+}

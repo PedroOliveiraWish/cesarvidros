@@ -1,0 +1,23 @@
+.categoria-card {
+    background: #112240 !important;
+    border-radius: 8px !important;
+    color: #ccd6f6 !important;
+
+    .ant-card-head {
+        background: #112240 !important;
+        color: #ccd6f6 !important;
+    }
+
+    .ant-card-cover img {
+        height: 280px !important;
+        object-fit: cover !important;
+    }
+
+    .ant-card-body {
+        text-align: center !important;
+    }
+}
+
+.ant-card-meta-description {
+    color: #ccd6f6 !important;
+}
