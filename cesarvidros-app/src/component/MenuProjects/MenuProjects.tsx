@@ -58,7 +58,7 @@ export const MenuCategoria: React.FC = () => {
       key: "cat_1",
       label: "Vidro Temperado",
       children: subcategorias.map((sub) => ({
-        key: sub.id_sub.toString(),
+        key: sub.id_sub,
         label: sub.nome,
       })),
     },

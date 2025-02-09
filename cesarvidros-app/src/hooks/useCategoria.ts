@@ -33,7 +33,7 @@ export const useCategoria = () => {
         }
 
         fetchCategorias()
-    })
+    }, []);
 
     return categorias
 }

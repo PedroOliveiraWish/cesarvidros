@@ -17,13 +17,18 @@ export const ResponsiveNav: React.FC = () => {
   const [drawerVisible, setDrawerVisible] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+useEffect(() => {
+  const handleResize = () => {
+    const isNowMobile = window.innerWidth < 768;
+    if (isNowMobile !== isMobile) {
+      setIsMobile(isNowMobile);
+    }
+  };
+
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, [isMobile]); // Add `isMobile` as a dependency to prevent unnecessary re-renders
+
 
   const menuItems = (
     <Menu theme="dark" mode="vertical">

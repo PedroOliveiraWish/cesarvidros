@@ -31,10 +31,14 @@ export const useServico = () => {
                 }
             } catch (error) {
                 console.error(error);
+            } finally {
+                console.log('Servicos carregados')
             }
         }
 
-        fetchServicos()
+        if (servicos.length === 0) {
+            fetchServicos();
+          }
     }, [])
 
     return servicos;
