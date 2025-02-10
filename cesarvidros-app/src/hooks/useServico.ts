@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLoading } from "../component/Loading/Loading";
 
 interface Servico {
     id_servico: number;
@@ -11,9 +12,11 @@ interface Servico {
 
 export const useServico = () => {
     const [servicos, setServicos] = useState<Servico[]>([]);
+    const {startLoading, stopLoading} = useLoading();
 
     useEffect(() => {
         const fetchServicos = async () => {
+            startLoading();
             try {
                 const response = await fetch('https://cesarvidros.onrender.com/api/servicos/get-all', {
                     method: 'GET',
@@ -32,7 +35,7 @@ export const useServico = () => {
             } catch (error) {
                 console.error(error);
             } finally {
-                console.log('Servicos carregados')
+                stopLoading();
             }
         }
 

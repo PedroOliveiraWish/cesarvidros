@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLoading } from "../component/Loading/Loading";
 
 interface Categoria {
     id_categoria: number;
@@ -9,9 +10,11 @@ interface Categoria {
 
 export const useCategoria = () => {
     const [categorias, setCategorias] = useState<Categoria[]>([]);
+    const {startLoading, stopLoading} = useLoading();
 
     useEffect(() => {
         const fetchCategorias = async () => {
+            startLoading();
             try {
                 const response = await fetch('https://cesarvidros.onrender.com/api/categorias/get-all', {
                     method: 'GET',
@@ -29,6 +32,8 @@ export const useCategoria = () => {
                 }
             } catch (error) {
                 console.error(error);
+            } finally {
+                stopLoading();
             }
         }
 

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLoading } from "../component/Loading/Loading";
 
 interface SubCategoria {
     id_sub: number;
@@ -6,9 +7,11 @@ interface SubCategoria {
 }
 export const useSubCategoria = () => {
     const [categorias, setCategorias] = useState<SubCategoria[]>([]);
+    const {startLoading, stopLoading} = useLoading();
 
     useEffect(() => {
         const fetchCategorias = async () => {
+            startLoading();
             try {
                 const response = await fetch('https://cesarvidros.onrender.com/api/sub-categorias/get-all', {
                     method: 'GET',
@@ -26,6 +29,8 @@ export const useSubCategoria = () => {
                 }
             } catch (error) {
                 console.error(error);
+            } finally {
+                stopLoading();
             }
         }
 
