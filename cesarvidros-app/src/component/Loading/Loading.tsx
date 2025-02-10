@@ -21,15 +21,11 @@ export const useLoading = () => {
 export const LoadingProvider : React.FC<{children: ReactNode}> = ({children}) => {
     const [loading, setLoading] = useState(false);
 
-    const startLoading = () => setLoading(true)
-    const stopLoading = () => setLoading(false)
-
     return (
-        <LoadingContext.Provider value={{loading, startLoading, stopLoading}}>
+        <LoadingContext.Provider value={{loading, startLoading: () => setLoading(true), stopLoading: () => setLoading(false)}}>
             {loading && (
-                <div className="container-loading">
-                    <Spin size="large" />
-                    <p>...loading</p>
+                <div className="loading-container">
+                    <Spin size="large" fullscreen/>
                 </div>
             )}
             {children}
