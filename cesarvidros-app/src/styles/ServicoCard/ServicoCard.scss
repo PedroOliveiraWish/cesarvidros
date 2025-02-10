@@ -95,4 +95,8 @@ img {
     .servico-card.expanded {
         width: 90vw !important;
     }
+
+    .servico-card.expanded img {
+        height: 40vh !important;
+    }
 }
