@@ -14,7 +14,6 @@ export const HomePage: React.FC = () => {
     <Layout style={{ minHeight: "100vh"}}>
       <ResponsiveNav />
       <Layout.Content style={{overflow: 'auto', backgroundColor: '#1e1e1e'}}>
-        <BannerComponent />
           <div className="carousel-title">Projetos</div>
           <CarouselCardServico />
           <div className="carousel-title">Serviços oferecidos</div>

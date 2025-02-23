@@ -7,6 +7,7 @@ import { AboutPage } from "./Page/AboutPage";
 import { HomePage } from "./Page/HomePage";
 import { ServicesPage } from "./Page/ServicesPage";
 import { ProjectsPage } from "./Page/ProjectsPage";
+import { BudgetPage } from "./Page/BudgetPage";
 
 import "./styles/StyleForAll.css";
 
@@ -20,6 +21,7 @@ function App() {
             <Route path="/sobre" element={<AboutPage />} />
             <Route path="/servicos" element={<ServicesPage />} />
             <Route path="/projetos" element={<ProjectsPage />} />
+            <Route path="/orcamentos" element={<BudgetPage />} />
           </Routes>
         </Layout>
       </Router>

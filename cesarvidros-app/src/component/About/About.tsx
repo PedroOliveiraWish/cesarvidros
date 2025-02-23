@@ -66,9 +66,8 @@ export const AboutComponent: React.FC<Props> = ({ loja, proprietario }) => {
   );
 
   return (
-    <Layout style={{ overflow: 'auto', padding: '0' }} className="about-page">
+    <Layout style={{ overflow: 'auto', padding: '0', minHeight: '100vh' }} className="about-page">
       <Layout.Content>
-        <BannerComponent />
         <div style={{ padding: '20px' }}> {/* Added padding for better spacing */}
           <LojaCard />
           <ProprietarioCard />

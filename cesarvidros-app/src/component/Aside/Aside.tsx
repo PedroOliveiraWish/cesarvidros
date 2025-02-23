@@ -7,8 +7,7 @@ import {
   FileOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Drawer, Button } from "antd";
-
-import "../../styles/ResponsiveNav/ResponsiveNav.css";
+import "../../styles/ResponsiveNav/ResponsiveNav.css"; // Import SCSS file
 
 const { Sider, Header } = Layout;
 
@@ -17,32 +16,33 @@ export const ResponsiveNav: React.FC = () => {
   const [drawerVisible, setDrawerVisible] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
 
-useEffect(() => {
-  const handleResize = () => {
-    const isNowMobile = window.innerWidth < 768;
-    if (isNowMobile !== isMobile) {
-      setIsMobile(isNowMobile);
-    }
-  };
-
-  window.addEventListener("resize", handleResize);
-  return () => window.removeEventListener("resize", handleResize);
-}, [isMobile]); // Add `isMobile` as a dependency to prevent unnecessary re-renders
-
+  useEffect(() => {
+    const handleResize = () => {
+      const isNowMobile = window.innerWidth < 768;
+      if (isNowMobile !== isMobile) {
+        setIsMobile(isNowMobile);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isMobile]);
 
   const menuItems = (
-    <Menu theme="dark" mode="vertical">
-      <Menu.Item style={{borderBottom: '.5px solid #ccc', borderRadius: '0', borderTop: '1px solid #ccc', padding: '0 15px'}} key="1" icon={<HomeOutlined />}>
+    <Menu theme="dark" mode="inline">
+      <Menu.Item key="1" icon={<HomeOutlined />}>
         <Link to="/">Principal</Link>
       </Menu.Item>
-      <Menu.Item style={{borderBottom: '.5px solid #ccc', borderRadius: '0', borderTop: '1px solid #ccc', padding: '0 15px'}} key="2" icon={<HomeOutlined />}>
+      <Menu.Item key="2" icon={<HomeOutlined />}>
         <Link to="/sobre">Sobre</Link>
       </Menu.Item>
-      <Menu.Item style={{borderBottom: '.5px solid #ccc', borderRadius: '0', borderTop: '1px solid #ccc', padding: '0 15px'}} key="3" icon={<AlignLeftOutlined />}>
+      <Menu.Item key="3" icon={<AlignLeftOutlined />}>
         <Link to="/servicos">Serviços</Link>
       </Menu.Item>
-      <Menu.Item style={{borderBottom: '.5px solid #ccc', borderRadius: '0', borderTop: '1px solid #ccc', padding: '0 15px'}} key="4" icon={<FileOutlined />}>
+      <Menu.Item key="4" icon={<FileOutlined />}>
         <Link to="/projetos">Projetos</Link>
+      </Menu.Item>
+      <Menu.Item key="5" icon={<FileOutlined />}>
+        <Link to="/orcamentos">Orçamentos</Link>
       </Menu.Item>
     </Menu>
   );
@@ -51,21 +51,24 @@ useEffect(() => {
     <>
       {/* Mobile Header */}
       <Header className="mobile-header">
-        <span className="logo">César Vidros</span>
+        <div className="logo-container">
+          <span className="logo">César Vidros</span>
+        </div>
         <Button
-          icon={<MenuOutlined />}
+          type="text"
+          icon={<MenuOutlined style={{ fontSize: "1.5rem", color: "#fff" }} />}
           onClick={() => setDrawerVisible(true)}
+          className="menu-button"
         />
       </Header>
-
       {/* Mobile Menu Drawer */}
       <Drawer
         title="Menu"
         placement="right"
-        closable
-        style={{ backgroundColor: "#001529", color: "white" }}
+        closable={false}
         onClose={() => setDrawerVisible(false)}
         open={drawerVisible}
+        className="mobile-drawer"
       >
         {menuItems}
       </Drawer>
@@ -76,15 +79,15 @@ useEffect(() => {
       collapsible
       collapsed={collapsed}
       onCollapse={setCollapsed}
-      className="sider"
+      className="desktop-sider"
     >
-      <div className="logo">
-        <div className="img">
-          <img
-            src="https://res-console.cloudinary.com/dj7s4tg5e/thumbnails/v1/image/upload/v1739057095/TG1VZWxTZldLNUd4X21idGpzdQ==/drilldown"
-            alt="Logo"
-          />
-        </div>
+      <div className="logo-container">
+        <img
+          src="https://res-console.cloudinary.com/dj7s4tg5e/thumbnails/v1/image/upload/v1739057095/TG1VZWxTZldLNUd4X21idGpzdQ==/drilldown"
+          alt="Logo"
+          className="logo-img"
+        />
+        {!collapsed && <span className="logo-text">César Vidros</span>}
       </div>
       {menuItems}
     </Sider>

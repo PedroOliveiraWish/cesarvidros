@@ -26,9 +26,9 @@ export const AboutPage: React.FC = () => {
   return (
     <Layout style={{ minHeight: "100vh" }}>
       <ResponsiveNav />
-      <Layout.Content style={{ overflow: 'auto',  backgroundColor: '#1e1e1e'}}>
+      <Layout.Content style={{ overflow: "auto", minHeight: '100vh', backgroundColor: "#1e1e1e" }}>
         <AboutComponent loja={loja} proprietario={proprietario} />
-     <WhatsAppButton />
+        <WhatsAppButton />
       </Layout.Content>
     </Layout>
   );

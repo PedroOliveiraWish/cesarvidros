@@ -1,102 +1,125 @@
-.servico-card {
-    width: 90% !important;
-    margin: 10px auto !important;
-    height: fit-content !important;
-    border-radius: 8px !important;
-    overflow: hidden !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4) !important;
-    transition: transform 0.3s ease-in-out !important;
-    background: #112240 !important;
-    cursor: pointer;
+// Variables
+$primary-color: #112240;
+$accent-color: #1890ff;
+$text-color: #ffffff;
+$light-text-color: #d1d1d1;
+$shadow-color: rgba(0, 0, 0, 0.4);
+$expanded-shadow-color: rgba(0, 0, 0, 0.6);
+$overlay-color: rgba(0, 0, 0, 0.7);
 
-    &:hover {
-        transform: scale(1.05) !important;
-    }
+// Breakpoints
+$mobile-breakpoint: 768px;
 
-    .ant-card {
-        border-radius: 8px !important;
-        background: #112240 !important;
-        color: #ffffff !important; // White text for contrast
-
-        .ant-card-meta-description {
-            font-size: 14px !important;
-            color: #d1d1d1 !important; // Light gray text for readability
-            margin-top: 8px !important;
-        }
-
-        .ant-card-head {
-            background: #112240 !important;
-            width: 100% !important;
-            font-weight: bold !important;
-            color: white !important;
-        }
-    }
+// General Reset
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-img {
-    padding: 5px !important;
+// Service Card
+.servico-card {
+  width: 90%;
+  margin: 10px auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px $shadow-color;
+  transition: transform 0.3s ease-in-out;
+  background: $primary-color;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  .ant-card {
+    border-radius: 8px;
+    background: $primary-color;
+    height: 100%;
+    color: $text-color;
+
+    .ant-card-head {
+      background: $primary-color;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .ant-card-meta-description {
+      font-size: 14px;
+      color: $light-text-color;
+      margin-top: 8px;
+    }
+
+    .ant-card-head-title,
+    .ant-card-extra {
+      color: $text-color;
+      text-align: left;
+    }
+  }
+
+  img {
+    padding: 5px;
     border-radius: 5px;
     height: 200px;
     object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .ant-card-body {
+    padding: 0 20px 20px 20px;
+  }
 }
 
-.ant-card-head-title, .ant-card-extra {
-    color: #ffffff !important;
-    text-align: left;
-}
-
-/* Fullscreen Mode */
+// Expanded Mode
 .servico-card.expanded {
-    position: fixed !important;
-    top: 50% !important;
-    left: 50% !important;
-    width: 50vw !important;
-    height: fit-content !important;
-    transform: translate(-50%, -50%) !important;
-    z-index: 1000 !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
-    transition: all 0.3s ease-in-out !important;
-}
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50vw;
+  height: fit-content;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  box-shadow: 0 10px 30px $expanded-shadow-color;
+  transition: all 0.3s ease-in-out;
 
-.servico-card.expanded .card-content {
-    width: 100% !important;
-    height: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
-}
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+    text-align: center;
+  }
 
-.servico-card.expanded img {
-    width: 100% !important;
-    height: 60vh !important;
+  img {
+    width: 100%;
+    height: 60vh;
     padding: 15px;
-    object-fit: cover !important;
+    object-fit: cover;
+  }
 }
 
-.ant-card-body {
-    padding: 0 20px 20px 20px !important;
+// Responsive Design
+@media screen and (max-width: $mobile-breakpoint) {
+  .servico-card.expanded {
+    width: 90vw;
+
+    img {
+      height: 40vh;
+    }
+  }
 }
 
-/* Overlay */
+// Overlay
 .overlay {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    background: rgba(0, 0, 0, 0.7) !important;
-    z-index: 999 !important;
-    transition: opacity 0.3s ease-in-out !important;
-}
-
-@media screen and (max-width: 768px) {
-    .servico-card.expanded {
-        width: 90vw !important;
-    }
-
-    .servico-card.expanded img {
-        height: 40vh !important;
-    }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: $overlay-color;
+  z-index: 999;
+  transition: opacity 0.3s ease-in-out;
 }

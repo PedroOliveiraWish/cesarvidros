@@ -11,7 +11,6 @@ export const ServicesPage: React.FC = () => {
     <Layout style={{minHeight: '100vh'}}>
       <ResponsiveNav />
       <Layout.Content style={{ overflow: 'auto', backgroundColor: '#1e1e1e'}}>
-        <BannerComponent />
         <ListCategorias />
         <WhatsAppButton />
         <Footer />
