@@ -38,6 +38,7 @@ export const useCategoria = () => {
         }
 
         fetchCategorias()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return categorias

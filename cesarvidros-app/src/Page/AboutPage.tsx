@@ -3,6 +3,7 @@ import { Layout } from "antd";
 
 import { AboutComponent } from "../component/About/About";
 import { ResponsiveNav } from "../component/Aside/Aside";
+import { BannerComponent } from "../component/Banner/Banner";
 import { WhatsAppButton } from "../component/Whatsapp/WhatsappButton";
 
 const loja = {
@@ -26,7 +27,8 @@ export const AboutPage: React.FC = () => {
   return (
     <Layout style={{ minHeight: "100vh" }}>
       <ResponsiveNav />
-      <Layout.Content style={{ overflow: "auto", minHeight: '100vh', backgroundColor: "#1e1e1e" }}>
+      <Layout.Content style={{padding: '20px', overflow: "auto", minHeight: '100vh', backgroundColor: "#1e1e1e" }}>
+        <BannerComponent title="Sobre Nós" />
         <AboutComponent loja={loja} proprietario={proprietario} />
         <WhatsAppButton />
       </Layout.Content>

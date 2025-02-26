@@ -13,7 +13,8 @@ export const HomePage: React.FC = () => {
   return (
     <Layout style={{ minHeight: "100vh"}}>
       <ResponsiveNav />
-      <Layout.Content style={{overflow: 'auto', backgroundColor: '#1e1e1e'}}>
+      <Layout.Content style={{padding: '20px', overflow: 'auto', backgroundColor: '#1e1e1e', margin: 'auto'}}>
+        <BannerComponent title="César Vidros" />
           <div className="carousel-title">Projetos</div>
           <CarouselCardServico />
           <div className="carousel-title">Serviços oferecidos</div>

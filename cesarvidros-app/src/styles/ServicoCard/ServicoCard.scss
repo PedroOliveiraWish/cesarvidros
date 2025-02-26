@@ -1,11 +1,13 @@
-// Variables
-$primary-color: #112240;
-$accent-color: #1890ff;
-$text-color: #ffffff;
-$light-text-color: #d1d1d1;
-$shadow-color: rgba(0, 0, 0, 0.4);
-$expanded-shadow-color: rgba(0, 0, 0, 0.6);
-$overlay-color: rgba(0, 0, 0, 0.7);
+// Variables (nova paleta de cores)
+$primary-color: #0a0a27; // Fundo escuro
+$secondary-color: #1e1e1e; // Fundo secundário
+$text-color: #ffffff; // Cor do texto
+$accent-color: #0074d9; // Azul claro para destaque
+$error-color: #ff4d4f; // Vermelho para erros
+$button-color: #0056b3; // Azul mais escuro para botão
+$shadow-color: rgba(0, 0, 0, 0.4); // Sombra padrão
+$expanded-shadow-color: rgba(0, 0, 0, 0.6); // Sombra no modo expandido
+$overlay-color: rgba(0, 0, 0, 0.7); // Fundo escuro semi-transparente
 
 // Breakpoints
 $mobile-breakpoint: 768px;
@@ -41,11 +43,12 @@ body {
       background: $primary-color;
       font-weight: bold;
       text-align: left;
+      border-bottom: 1px solid $accent-color; // Adiciona uma borda destacada
     }
 
     .ant-card-meta-description {
       font-size: 14px;
-      color: $light-text-color;
+      color: $text-color;
       margin-top: 8px;
     }
 
@@ -89,7 +92,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    // align-items: center;
     text-align: center;
   }
 

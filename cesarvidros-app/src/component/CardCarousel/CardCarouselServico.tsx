@@ -7,7 +7,10 @@ import { useServico } from "../../hooks/useServico";
 export const CarouselCardServico: React.FC = () => {
   const servicos = useServico();
 
-  // Divida os serviços em grupos para o carrossel
+  // Limit the services to only the first 5 items
+  const limitedServicos = servicos.slice(0, 5);
+
+  // Function to divide the services into groups for the carousel
   const chunkArray = (arr: any[], chunkSize: number) => {
     const result: any[] = [];
     for (let i = 0; i < arr.length; i += chunkSize) {
@@ -16,9 +19,9 @@ export const CarouselCardServico: React.FC = () => {
     return result;
   };
 
-  // Defina quantos cartões por slide
-  const cardsPerSlide = 1; // Você pode ajustar isso conforme necessário
-  const groupedServicos = chunkArray(servicos, cardsPerSlide);
+  // Define how many cards per slide
+  const cardsPerSlide = 1; // You can adjust this as needed
+  const groupedServicos = chunkArray(limitedServicos, cardsPerSlide);
 
   return (
     <Carousel autoplay={true} autoplaySpeed={2000}>
