@@ -8,7 +8,8 @@ import { WhatsAppButton } from "../component/Whatsapp/WhatsappButton";
 
 export const ServicesPage: React.FC = () => {
   return (
-    <Layout style={{minHeight: '100vh'}}>
+    <Layout style={{ maxHeight: "100vh" }}>
+
       <ResponsiveNav />
       <Layout.Content style={{padding: '20px', overflow: 'auto', backgroundColor: '#1e1e1e'}}>
         <BannerComponent title="Serviços"/>

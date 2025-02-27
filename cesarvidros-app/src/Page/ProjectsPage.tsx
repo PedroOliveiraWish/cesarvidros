@@ -10,14 +10,12 @@ export const ProjectsPage: React.FC = () => {
   const style = {
     overflow: "auto",
     padding: "20px",
-    maxHeight: "100vh",
     backgroundColor: "#1e1e1e ",
   };
 
   return (
-    <Layout
-      style={{ minHeight: "100vh", backgroundColor: "#1e1e1e !important" }}
-    >
+    <Layout style={{ maxHeight: "100vh" }}>
+
       <ResponsiveNav />
       <Layout.Content style={style} className="content-">
         <BannerComponent title="Projetos"/>

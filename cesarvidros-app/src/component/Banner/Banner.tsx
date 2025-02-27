@@ -10,6 +10,7 @@ export const BannerComponent = ({ title }: { title: string }) => {
       backgroundColor: "#0D47A1", // Dark blue background
       borderRadius: "8px", // Rounded corners for aesthetics
       boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)", // Subtle shadow for depth
+      margin: '10px'
     },
     title: {
       fontSize: "24px", // Adjust font size as needed

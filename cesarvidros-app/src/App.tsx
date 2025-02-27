@@ -15,7 +15,7 @@ function App() {
   return (
     <LoadingProvider>
       <Router>
-        <Layout style={{ overflow: "auto", maxHeight: "100vh" }}>
+        <Layout style={{ overflow: "auto"}}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/sobre" element={<AboutPage />} />
