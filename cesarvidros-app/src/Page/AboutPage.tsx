@@ -17,8 +17,7 @@ const loja = {
 };
 const proprietario = {
   nome: "César Renó de Oliveira",
-  imagem_url:
-    "https://res-console.cloudinary.com/dj7s4tg5e/thumbnails/v1/image/upload/v1739131988/Y2VzYXItdmlkcm9zX2twMDg2cw==/drilldown",
+  imagem_url: '../../assets/cesar-vidros.jpg',
   descricao:
     "César é um profissional experiente no ramo de vidraçaria, com anos de dedicação e aprimoramento técnico. Apaixonado pelo setor, ele se destaca pelo compromisso em entregar serviços de alto padrão, sempre buscando novas tendências e tecnologias para oferecer as melhores soluções aos clientes. Seu objetivo é aliar tradição e inovação, tornando a César Vidros uma referência em qualidade e confiança.",
 };

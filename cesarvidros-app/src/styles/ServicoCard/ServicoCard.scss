@@ -57,19 +57,20 @@ body {
       color: $text-color;
       text-align: left;
     }
-  }
+    .ant-card-cover {
+      img {
+        padding: 5px;
+        border-radius: 5px;
 
-  img {
-    padding: 5px;
-    border-radius: 5px;
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out;
-
-    &:hover {
-      transform: scale(1.1);
+        // Efeito de hover
+        &:hover {
+          cursor: pointer;
+          transform: none !important;
+        }
+      }
     }
   }
+
 
   .ant-card-body {
     padding: 0 20px 20px 20px;
@@ -81,7 +82,7 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 50vw;
+  width: 65vw;
   height: fit-content;
   transform: translate(-50%, -50%);
   z-index: 1000;
@@ -93,14 +94,18 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+
+    .ant-card-cover {
+      img {
+        width: 100% !important;
+        height: 60vh !important;
+        padding: 15px;
+        object-fit: cover !important;
+      }
+    }
   }
 
-  img {
-    width: 100%;
-    height: 60vh;
-    padding: 15px;
-    object-fit: cover;
-  }
+
 }
 
 // Responsive Design
@@ -108,8 +113,12 @@ body {
   .servico-card.expanded {
     width: 90vw;
 
-    img {
-      height: 40vh;
+    .card-content {  
+      .ant-card-cover {
+        img {
+          height: 40vh !important;
+        }
+      }
     }
   }
 }

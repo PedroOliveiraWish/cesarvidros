@@ -83,7 +83,7 @@ export const ResponsiveNav: React.FC = () => {
     >
       <div className="logo-container">
         <img
-          src="https://res-console.cloudinary.com/dj7s4tg5e/thumbnails/v1/image/upload/v1739057095/TG1VZWxTZldLNUd4X21idGpzdQ==/drilldown"
+        src="logo.png"
           alt="Logo"
           className="logo-img"
         />

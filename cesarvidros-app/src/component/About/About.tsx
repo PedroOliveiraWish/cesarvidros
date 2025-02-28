@@ -1,10 +1,9 @@
 import React from "react";
 import { Layout, Card, Typography, Row, Col } from "antd";
-import { BannerComponent } from "../Banner/Banner";
 import '../../styles/About/About.css';
 import { Footer } from "../Footer/FooterComponent";
 
-const { Title, Text } = Typography;
+const {  Text } = Typography;
 
 interface Props {
   loja: {

@@ -4,6 +4,7 @@ import { LoadingProvider } from "./component/Loading/Loading";
 import Layout from "antd/es/layout/layout";
 
 import { AboutPage } from "./Page/AboutPage";
+import { LoginSignPage } from "./Page/LoginSignPage";
 import { HomePage } from "./Page/HomePage";
 import { ServicesPage } from "./Page/ServicesPage";
 import { ProjectsPage } from "./Page/ProjectsPage";
@@ -17,7 +18,8 @@ function App() {
       <Router>
         <Layout style={{ overflow: "auto"}}>
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<LoginSignPage />} />
+            <Route path="/home" element={<HomePage />} />
             <Route path="/sobre" element={<AboutPage />} />
             <Route path="/servicos" element={<ServicesPage />} />
             <Route path="/projetos" element={<ProjectsPage />} />

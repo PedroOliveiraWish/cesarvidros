@@ -7,12 +7,21 @@
     margin-bottom: 15px !important;
 }
 
+.ant-card-cover {
+    padding: 6px 12px;
+}
+
+img:hover {
+    cursor: pointer;
+    transform: none;
+}
+
 .ant-card-head-title {
     font-size: 1.3rem !important;
 }
 @media screen and (max-width: 768px) {
 
     .ant-layout-content {
-        padding: 0 !important;
+        padding: 19px !important;
     }
 }
