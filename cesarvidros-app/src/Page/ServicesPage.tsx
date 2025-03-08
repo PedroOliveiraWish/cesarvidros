@@ -6,11 +6,19 @@ import { BannerComponent } from "../component/Banner/Banner";
 import { Footer } from "../component/Footer/FooterComponent";
 import { WhatsAppButton } from "../component/Whatsapp/WhatsappButton";
 
-export const ServicesPage: React.FC = () => {
+const paths = [
+  { name: "Início", path: "/user/home" },
+  { name: "Sobre", path: "/user/sobre" },
+  { name: "Serviços", path: "/user/servicos" },
+  { name: "Projetos", path: "/user/projetos" },
+  { name: "Orçamentos", path: "/user/orcamentos" },
+]
+
+const ServicesPage: React.FC = () => {
   return (
     <Layout style={{ maxHeight: "100vh" }}>
 
-      <ResponsiveNav />
+      <ResponsiveNav paths={paths} />
       <Layout.Content style={{padding: '20px', overflow: 'auto', backgroundColor: '#1e1e1e'}}>
         <BannerComponent title="Serviços"/>
         <ListCategorias />
@@ -20,3 +28,5 @@ export const ServicesPage: React.FC = () => {
     </Layout>
   );
 };
+
+export default ServicesPage;

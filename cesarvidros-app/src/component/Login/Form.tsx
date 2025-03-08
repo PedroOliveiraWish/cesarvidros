@@ -98,7 +98,7 @@ export const LoginForm = (props: LoginProps) => {
     if (email === "test@example.com" && password === "password") {
       setError("");
       alert("Success");
-      navigate("/home");
+      navigate("user/home");
     } else {
       setError("Email or password is incorrect");
     }

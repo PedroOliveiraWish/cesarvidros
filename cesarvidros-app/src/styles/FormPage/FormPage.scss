@@ -26,3 +26,11 @@ $primary-color: #121212; // Fundo escuro
     background-color: $primary-color;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .login-sign-page {
+    &__container {
+      width: 90vw;
+    }
+  }
+}

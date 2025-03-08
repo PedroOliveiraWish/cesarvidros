@@ -14,21 +14,17 @@ $shadow-color: rgba(0, 0, 0, 0.4); // Sombra padrão
   overflow: hidden;
   box-shadow: 0 4px 8px $shadow-color;
   transition: transform 0.3s ease-in-out;
-  background: $primary-color !important;
+  background: $primary-color ;
   color: $text-color !important;
-
-  &:hover {
-    transform: scale(1.05);
-  }
 
   .ant-card {
     border-radius: 8px;
     background: $secondary-color; // Fundo secundário para o card interno
-    color: $text-color !important;
+    color: $text-color ;
 
     .ant-card-meta-description {
       font-size: 14px;
-      color: $light-text-color !important; // Texto secundário mais suave
+      color: $light-text-color  ; // Texto secundário mais suave
       margin-top: 8px;
     }
 
@@ -43,15 +39,15 @@ $shadow-color: rgba(0, 0, 0, 0.4); // Sombra padrão
 
 // Imagem do Card
 img {
-  width: 100% !important;
+  width: 100% ;
   height: 300px !important;
-  object-fit: cover !important;
-  border-top-left-radius: 8px !important;
-  border-top-right-radius: 8px !important;
-  transition: transform 0.3s ease-in-out !important;
+  object-fit: cover ;
+  border-top-left-radius: 8px ;
+  border-top-right-radius: 8px ;
+  transition: transform 0.3s ease-in-out ;
 
   &:hover {
-    transform: scale(1.1) !important;
+    transform: scale(1.1) ;
   }
 }
 

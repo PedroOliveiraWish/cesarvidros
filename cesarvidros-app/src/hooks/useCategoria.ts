@@ -18,10 +18,10 @@ export const useCategoria = () => {
             try {
                 const response = await fetch('https://cesarvidros.onrender.com/api/categorias/get-all', {
                     method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    }
-                })
+                    headers: { 'Content-Type': 'application/json' },
+                    cache: "force-cache" // Forces browser caching
+                });
+                
 
                 const response_json = await response.json()
 

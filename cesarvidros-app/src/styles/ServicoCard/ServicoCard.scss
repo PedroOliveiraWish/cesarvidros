@@ -29,15 +29,11 @@ body {
   background: $primary-color;
   cursor: pointer;
 
-  &:hover {
-    transform: scale(1.05);
-  }
-
   .ant-card {
     border-radius: 8px;
     background: $primary-color;
     height: 100%;
-    color: $text-color;
+    color: $text-color !important;
 
     .ant-card-head {
       background: $primary-color;
@@ -48,33 +44,27 @@ body {
 
     .ant-card-meta-description {
       font-size: 14px;
-      color: $text-color;
+      color: $text-color !important;
       margin-top: 8px;
     }
-
-    .ant-card-head-title,
-    .ant-card-extra {
-      color: $text-color;
-      text-align: left;
-    }
-    .ant-card-cover {
-      img {
-        padding: 5px;
-        border-radius: 5px;
-
-        // Efeito de hover
-        &:hover {
-          cursor: pointer;
-          transform: none !important;
-        }
-      }
-    }
   }
-
 
   .ant-card-body {
-    padding: 0 20px 20px 20px;
+    padding: 10px 20px 20px 20px;
   }
+}
+
+.ant-card-head-title,
+.ant-card-extra {
+  color: $text-color !important;
+  text-align: left;
+}
+
+img {
+  padding: 5px;
+  border-radius: 5px;
+  object-fit: cover;
+  height: 300px;
 }
 
 // Expanded Mode
@@ -94,18 +84,27 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+  }
 
-    .ant-card-cover {
-      img {
-        width: 100% !important;
-        height: 60vh !important;
-        padding: 15px;
-        object-fit: cover !important;
-      }
+  .ant-card-cover {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 90% !important;
+      border-radius: 25px !important;
+      height: 60vh;
+      padding: 15px;
+      object-fit: cover !important;
     }
   }
 
-
+  .ant-card-body {
+    padding:0 20px 20px 20px;
+    font-size: 1rem;
+  }
 }
 
 // Responsive Design
@@ -113,11 +112,11 @@ body {
   .servico-card.expanded {
     width: 90vw;
 
-    .card-content {  
-      .ant-card-cover {
-        img {
-          height: 40vh !important;
-        }
+    .ant-card-cover {
+      padding: 0;
+      img {
+        width: 100% !important;
+        height: 40vh !important;
       }
     }
   }

@@ -11,7 +11,11 @@ import "../../styles/ResponsiveNav/ResponsiveNav.css"; // Import SCSS file
 
 const { Sider, Header } = Layout;
 
-export const ResponsiveNav: React.FC = () => {
+interface ResponsiveNavProps {
+  paths: { name: string; path: string }[];
+}
+
+export const ResponsiveNav: React.FC<ResponsiveNavProps> = ({paths}) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [drawerVisible, setDrawerVisible] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
@@ -29,21 +33,11 @@ export const ResponsiveNav: React.FC = () => {
 
   const menuItems = (
     <Menu theme="dark" mode="inline">
-      <Menu.Item key="1" icon={<HomeOutlined />}>
-        <Link to="/">Principal</Link>
-      </Menu.Item>
-      <Menu.Item key="2" icon={<HomeOutlined />}>
-        <Link to="/sobre">Sobre</Link>
-      </Menu.Item>
-      <Menu.Item key="3" icon={<AlignLeftOutlined />}>
-        <Link to="/servicos">Serviços</Link>
-      </Menu.Item>
-      <Menu.Item key="4" icon={<FileOutlined />}>
-        <Link to="/projetos">Projetos</Link>
-      </Menu.Item>
-      <Menu.Item key="5" icon={<FileOutlined />}>
-        <Link to="/orcamentos">Orçamentos</Link>
-      </Menu.Item>
+      {paths.map((path) => (
+        <Menu.Item key={path.name} icon={<HomeOutlined />}>
+          <Link to={path.path}>{path.name}</Link>
+        </Menu.Item>
+      ))}
     </Menu>
   );
 

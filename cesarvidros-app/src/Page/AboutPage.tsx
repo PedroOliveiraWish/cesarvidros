@@ -17,17 +17,31 @@ const loja = {
 };
 const proprietario = {
   nome: "César Renó de Oliveira",
-  imagem_url: '../../assets/cesar-vidros.jpg',
+  imagem_url: "../../assets/cesar-vidros.jpg",
   descricao:
     "César é um profissional experiente no ramo de vidraçaria, com anos de dedicação e aprimoramento técnico. Apaixonado pelo setor, ele se destaca pelo compromisso em entregar serviços de alto padrão, sempre buscando novas tendências e tecnologias para oferecer as melhores soluções aos clientes. Seu objetivo é aliar tradição e inovação, tornando a César Vidros uma referência em qualidade e confiança.",
 };
 
-export const AboutPage: React.FC = () => {
+const paths = [
+  { name: "Início", path: "/user/home" },
+  { name: "Sobre", path: "/user/sobre" },
+  { name: "Serviços", path: "/user/servicos" },
+  { name: "Projetos", path: "/user/projetos" },
+  { name: "Orçamentos", path: "/user/orcamentos" },
+]
+
+const AboutPage: React.FC = () => {
   return (
     <Layout style={{ maxHeight: "100vh" }}>
-
-      <ResponsiveNav />
-      <Layout.Content style={{padding: '20px', overflow: "auto", minHeight: '100vh', backgroundColor: "#1e1e1e" }}>
+      <ResponsiveNav paths={paths}/>
+      <Layout.Content
+        style={{
+          padding: "20px",
+          overflow: "auto",
+          minHeight: "100vh",
+          backgroundColor: "#1e1e1e",
+        }}
+      >
         <BannerComponent title="Sobre Nós" />
         <AboutComponent loja={loja} proprietario={proprietario} />
         <WhatsAppButton />
@@ -35,3 +49,5 @@ export const AboutPage: React.FC = () => {
     </Layout>
   );
 };
+
+export default AboutPage;

@@ -30,7 +30,7 @@ export const CarouselCardServico: React.FC = () => {
           <Row gutter={[16, 16]} justify="center">
             {group.map((servico: any) => (
               <Col xs={24} sm={24} md={12} key={servico.id_servico}>
-                <Link to={"/projetos"}>
+                <Link to={"/user/projetos"}>
                   <ServicoCard nome={servico.servico_nome} {...servico} />
                 </Link>
               </Col>

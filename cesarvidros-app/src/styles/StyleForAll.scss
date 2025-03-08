@@ -11,9 +11,13 @@
     padding: 6px 12px;
 }
 
+.ant-card-meta-description {
+    color: aliceblue !important;
+}
+
 img:hover {
-    cursor: pointer;
-    transform: none;
+    cursor: pointer !important;
+    transform: none !important;
 }
 
 .ant-card-head-title {

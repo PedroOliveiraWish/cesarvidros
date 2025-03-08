@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { Card, Button, Layout } from "antd";
+import { Layout } from "antd";
 
-import { ResponsiveNav } from "../component/Aside/Aside";
 import { LoginForm } from "../component/Login/Form";
 import { SignupForm } from "../component/Login/Form";
 import "../styles/FormPage/FormPage.css";
 
-export const LoginSignPage = () => {
+const LoginSignPage = () => {
   const [isLogin, setIsLogin] = useState(true);
 
   const handleLogin = () => {
@@ -50,3 +49,5 @@ export const LoginSignPage = () => {
     </Layout>
   );
 };
+
+export default LoginSignPage;

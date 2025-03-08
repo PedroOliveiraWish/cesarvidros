@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "antd";
-
-import '../../styles/CategoriaCard/CategoriaCard.css'
+import { motion } from "framer-motion";
+import "../../styles/CategoriaCard/CategoriaCard.css";
 
 interface Props {
   id_categoria: number;
@@ -12,13 +12,21 @@ interface Props {
 
 export const CategoriaCard: React.FC<Props> = (categorias) => {
   return (
-    <Card
-      key={categorias.id_categoria}
-      title={categorias.nome}
-      cover={<img alt={categorias.nome} src={categorias.imagem_url} />}
-      className="categoria-card-solo"
+    <motion.div
+      className="categoria-card-container"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true, amount: 0.2 }}
     >
-      <Card.Meta description={categorias.descricao} />
-    </Card>
+      <Card
+        key={categorias.id_categoria}
+        title={categorias.nome}
+        cover={<img alt={categorias.nome} src={categorias.imagem_url} />}
+        className="categoria-card-solo"
+      >
+        <Card.Meta description={categorias.descricao} />
+      </Card>
+    </motion.div>
   );
 };

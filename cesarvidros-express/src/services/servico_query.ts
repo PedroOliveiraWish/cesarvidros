@@ -2,6 +2,7 @@ import { pool } from "../database";
 import { Servico } from "../types/Servico";
 
 const getServices = async (): Promise<Servico[]> => {
+    const client = await pool.connect();
     try {
         const query = `
             SELECT 
@@ -22,6 +23,8 @@ const getServices = async (): Promise<Servico[]> => {
     } catch (err) {
         console.error("Error in getServices:", err);
         return [];
+    } finally {
+        client.release();
     }
 };
 
@@ -37,8 +40,9 @@ const getServicesBySubCategoriaId = async (sub_categoria_id: number): Promise<Se
                 sub_categoria.nome AS sub_categoria_nome
             FROM servico
             JOIN categoria ON servico.categoria_id = categoria.id_categoria
-            LEFT JOIN sub_categoria ON servico.sub_categoria_id = sub_categoria.id_sub_categoria
+            JOIN sub_categoria ON servico.sub_categoria_id = sub_categoria.id_sub_categoria
             WHERE servico.sub_categoria_id = $1;
+
         `;
 
         const servicos = await pool.query(query, [sub_categoria_id]);
@@ -50,9 +54,6 @@ const getServicesBySubCategoriaId = async (sub_categoria_id: number): Promise<Se
 };
 
 const getServicesByCategoriaId = async (categoria_id: number): Promise<Servico[]> => {
-    console.log('category id')
-    console.log(categoria_id)
-
     try {
         const query = `
             SELECT 

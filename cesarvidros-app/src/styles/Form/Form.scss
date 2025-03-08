@@ -21,14 +21,14 @@ $button-color: #0056b3; // Azul mais escuro para botão
   // width: 50vw;
   // height: 50vh;
   background-color: transparent;
-  margin: 2rem auto;
+  margin: 1rem auto;
 
   .auth-input {
     margin-bottom: 15px;
 
     input {
       padding: 0.75rem;
-      width: 25rem;
+      width: 25vw;
       border: none;
       border-radius: 4px;
       background-color: $secondary-color;
@@ -50,7 +50,7 @@ $button-color: #0056b3; // Azul mais escuro para botão
     background-color: $button-color;
     color: $text-color;
     border: none;
-    width: 25rem;
+    width: 25vw;
     border-radius: 4px;
     font-size: 1rem;
     font-weight: bold;
@@ -76,9 +76,10 @@ $button-color: #0056b3; // Azul mais escuro para botão
 
 @media screen and (max-width: 768px) {
   .auth-form {
+    padding: 0;
     .auth-input {
       input {
-        width: 60vw;
+        width: 70vw;
       }
     }
   }
