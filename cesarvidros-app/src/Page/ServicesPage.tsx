@@ -7,20 +7,24 @@ import { Footer } from "../component/Footer/FooterComponent";
 import { WhatsAppButton } from "../component/Whatsapp/WhatsappButton";
 
 const paths = [
-  { name: "Início", path: "/user/home" },
+  { name: "Início", path: "/" },
   { name: "Sobre", path: "/user/sobre" },
   { name: "Serviços", path: "/user/servicos" },
   { name: "Projetos", path: "/user/projetos" },
-  { name: "Orçamentos", path: "/user/orcamentos" },
-]
+];
 
 const ServicesPage: React.FC = () => {
   return (
     <Layout style={{ maxHeight: "100vh" }}>
-
       <ResponsiveNav paths={paths} />
-      <Layout.Content style={{padding: '20px', overflow: 'auto', backgroundColor: '#1e1e1e'}}>
-        <BannerComponent title="Serviços"/>
+      <Layout.Content
+        style={{
+          padding: "20px",
+          overflow: "auto",
+          backgroundColor: "#1e1e1e",
+        }}
+      >
+        <BannerComponent title="Serviços" />
         <ListCategorias />
         <WhatsAppButton />
         <Footer />

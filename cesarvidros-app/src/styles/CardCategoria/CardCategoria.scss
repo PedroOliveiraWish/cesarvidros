@@ -7,36 +7,36 @@ $light-text-color: #ccd6f6; // Cor do texto secundário
 
 // Categoria Card
 .categoria-card {
-  background: $primary-color !important;
-  border-radius: 8px !important;
-  color: $text-color !important;
+  background: $primary-color ;
+  border-radius: 8px ;
+  color: $text-color ;
 
   .ant-card-head {
-    background: $primary-color !important;
-    color: $text-color !important;
-    border-bottom: 1px solid $accent-color !important; // Adiciona uma borda destacada
+    background: $primary-color ;
+    color: $text-color ;
+    border-bottom: 1px solid $accent-color ; // Adiciona uma borda destacada
   }
 
   .ant-card-cover img {
-    height: 280px !important;
-    object-fit: cover !important;
-    border-radius: 8px !important;
-    transition: transform 0.3s ease-in-out !important;
+    height: 280px ;
+    object-fit: cover ;
+    border-radius: 8px ;
+    transition: transform 0.3s ease-in-out ;
 
     &:hover {
-      transform: scale(1.1) !important;
+      transform: scale(1.1) ;
     }
   }
 
   .ant-card-body {
-    text-align: center !important;
-    padding: 1rem !important;
+    text-align: center ;
+    padding: 1rem ;
   }
 }
 
 // Descrição do Card
 .ant-card-meta-description {
-  color: $light-text-color !important;
-  font-size: 0.875rem !important;
-  line-height: 1.5 !important;
+  color: $light-text-color ;
+  font-size: 0.875rem ;
+  line-height: 1.5 ;
 }

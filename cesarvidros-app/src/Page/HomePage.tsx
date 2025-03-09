@@ -9,11 +9,10 @@ import { Footer } from "../component/Footer/FooterComponent";
 import '../styles/HomePage/HomePage.css'
 
 const paths = [
-  { name: "Início", path: "/user/home" },
+  { name: "Início", path: "/" },
   { name: "Sobre", path: "/user/sobre" },
   { name: "Serviços", path: "/user/servicos" },
   { name: "Projetos", path: "/user/projetos" },
-  { name: "Orçamentos", path: "/user/orcamentos" },
 ]
 
 const HomePage: React.FC = () => {

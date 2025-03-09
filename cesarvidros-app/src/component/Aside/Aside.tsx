@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import {
   MenuOutlined,
   HomeOutlined,
-  AlignLeftOutlined,
-  FileOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Drawer, Button } from "antd";
 import "../../styles/ResponsiveNav/ResponsiveNav.css"; // Import SCSS file
