@@ -12,22 +12,31 @@ interface Servico {
 
 export const useServico = () => {
     const [servicos, setServicos] = useState<Servico[]>([]);
-    const {startLoading, stopLoading} = useLoading();
+    const { startLoading, stopLoading } = useLoading();
 
     useEffect(() => {
         const fetchServicos = async () => {
+            const cachedData = sessionStorage.getItem("servicos");
+            if (cachedData) {
+                const parsedData = JSON.parse(cachedData);
+                setServicos(parsedData);
+                return;
+            }
+
             startLoading();
             try {
                 const response = await fetch('https://cesarvidros.onrender.com/api/servicos/get-all', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
-                    }
+                    },
+                    cache: "force-cache"
                 })
 
                 const response_json = await response.json()
 
                 if (response_json.message === 'sucesso') {
+                    sessionStorage.setItem("servicos", JSON.stringify(response_json.data));
                     setServicos(response_json.data)
                 } else {
                     console.log(response_json.message, response_json.data)
@@ -41,7 +50,7 @@ export const useServico = () => {
 
         if (servicos.length === 0) {
             fetchServicos();
-          }
+        }
     }, [])
 
     return servicos;

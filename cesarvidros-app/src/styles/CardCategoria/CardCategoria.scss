@@ -1,42 +1,62 @@
-// Variables (nova paleta de cores)
-$primary-color: #0a0a27; // Fundo escuro
-$secondary-color: #1e1e1e; // Fundo secundário
-$text-color: #ffffff; // Cor do texto
-$accent-color: #0074d9; // Azul claro para destaque
-$light-text-color: #ccd6f6; // Cor do texto secundário
+// Variables (mesma paleta do servico-card)
+$primary-color: #1890ff; // Azul primário
+$secondary-color: #ffffff; // Fundo branco
+$text-color: #333333; // Cor do texto principal
+$light-text-color: #666666; // Cor do texto secundário
+$hover-color: #007bff; // Azul mais escuro para hover
+$border-radius: 8px;
+
+// Mixins
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
+}
 
 // Categoria Card
 .categoria-card {
-  background: $primary-color ;
-  border-radius: 8px ;
-  color: $text-color ;
+  background: $secondary-color; // Fundo branco
+  border: 1px solid #e8e8e8; // Borda leve
+  border-radius: $border-radius;
+  color: $text-color;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Sombra suave
+  overflow: hidden;
+  @include transition();
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); // Efeito hover com sombra mais pronunciada
+  }
 
   .ant-card-head {
-    background: $primary-color ;
-    color: $text-color ;
-    border-bottom: 1px solid $accent-color ; // Adiciona uma borda destacada
+    background: $secondary-color; // Fundo branco
+    color: $text-color; // Texto escuro
+    border-bottom: 1px solid #ddd; // Borda clara no cabeçalho
+
+    .ant-card-head-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: $text-color;
+    }
   }
 
   .ant-card-cover img {
-    height: 280px ;
-    object-fit: cover ;
-    border-radius: 8px ;
-    transition: transform 0.3s ease-in-out ;
+    height: 280px;
+    object-fit: cover;
+    border-radius: $border-radius;
+    @include transition(transform, 0.3s, ease-in-out);
 
     &:hover {
-      transform: scale(1.1) ;
+      transform: scale(1.1); // Zoom na imagem ao passar o mouse
     }
   }
 
   .ant-card-body {
-    text-align: center ;
-    padding: 1rem ;
-  }
-}
+    text-align: center;
+    padding: 1rem;
 
-// Descrição do Card
-.ant-card-meta-description {
-  color: $light-text-color ;
-  font-size: 0.875rem ;
-  line-height: 1.5 ;
+    .ant-card-meta-description {
+      color: $light-text-color; // Texto mais claro para descrições
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+  }
 }
